@@ -26,11 +26,10 @@ namespace WpfApp1
         {
             InitializeComponent();
             _isAdmin = isAdmin;
-
-            // Показываем кнопку редактирования только админу
             if (_isAdmin)
             {
                 EditOrderBtn.Visibility = Visibility.Visible;
+                AnalyticsBtn.Visibility = Visibility.Visible;
             }
 
             LoadOrders();
@@ -133,6 +132,12 @@ namespace WpfApp1
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
+            Close();
+        }
+
+        private void AnalyticsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new AnalyticsWindow().Show();
             Close();
         }
     }

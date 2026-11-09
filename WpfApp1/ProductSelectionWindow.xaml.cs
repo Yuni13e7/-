@@ -79,5 +79,11 @@ namespace WpfApp1
                 }
             }
         }
+
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

@@ -22,8 +22,9 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="Добавить товар" Width="150" Height="30" Click="AddItem_Click" Margin="0 0 10 0"/>
-                <Button Content="Удалить позицию" Width="150" Height="30" Click="RemoveItem_Click"/>
+                <Button Content="Добавить товар" Width="200" Height="30" Click="AddItem_Click" Margin="0 0 10 0"/>
+                <Button Content="Удалить позицию" Width="200" Height="30" Click="RemoveItem_Click" Margin="0 0 10 0"/>
+                <Button Content="Назад" Width="200" Height="30" Name="LogOut" Click="LogOut_Click"></Button>
             </StackPanel>
         </StackPanel>
 

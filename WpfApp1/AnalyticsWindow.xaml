@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfApp1.AnalyticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Аналитика продаж" Height="600" Width="900">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Выбор периода -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 0 0 20">
+            <TextBlock Text="Период с:" VerticalAlignment="Center" Margin="0 0 5 0"/>
+            <DatePicker x:Name="StartDatePicker" Width="150" SelectedDateChanged="Date_Changed"/>
+
+            <TextBlock Text="по:" VerticalAlignment="Center" Margin="15 0 5 0"/>
+            <DatePicker x:Name="EndDatePicker" Width="150" SelectedDateChanged="Date_Changed"/>
+
+            <Button Content="Экспорт в PDF" Width="150" Height="30" Margin="30 0 0 0" Click="ExportPdf_Click"/>
+        </StackPanel>
+
+        <!-- Сводные данные -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 20">
+            <TextBlock Text="Всего заказов: " FontSize="18" FontWeight="Bold"/>
+            <TextBlock x:Name="TotalOrdersText" FontSize="18" Margin="0 0 30 0"/>
+
+            <TextBlock Text="Общая сумма: " FontSize="18" FontWeight="Bold"/>
+            <TextBlock x:Name="TotalSumText" FontSize="18"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Text="Топ-5 моделей по продажам:" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+
+        <!-- Таблица с топ-5 -->
+        <DataGrid x:Name="TopProductsGrid" Grid.Row="3" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Модель" Binding="{Binding ProductName}" Width="*"/>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding ManufacturerName}" Width="200"/>
+                <DataGridTextColumn Header="Кол-во пар" Binding="{Binding TotalQuantity}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="4" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" Margin="0 20 0 0" Click="Back_Click"/>
+    </Grid>
+</Window>

@@ -17,8 +17,11 @@
             <Button Content="Добавить заказ" Width="150" Height="35" Click="AddOrder_Click" Margin="0 0 10 0"/>
             <Button Content="Удалить заказ" Width="150" Height="35" Click="DeleteOrder_Click"  Margin="0 0 10 0"/>
             <!-- Кнопка редактирования видна только админу (задается в коде) -->
-            <Button x:Name="EditOrderBtn" Content="Редактировать заказ" Width="200" Height="35" Click="EditOrder_Click" Visibility="Collapsed"/>
+            <Button x:Name="EditOrderBtn" Content="Редактировать заказ" Width="200" Height="35" Click="EditOrder_Click" Visibility="Collapsed" Margin="0 0 10 0"/>
+            <Button x:Name="AnalyticsBtn" Content="Аналитика" Width="120" Height="35" Click="AnalyticsBtn_Click" Visibility="Collapsed"/>
         </StackPanel>
+ 
+        
 
         <DataGrid x:Name="OrdersGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" 
                   SelectionMode="Single" MouseDoubleClick="OrdersGrid_MouseDoubleClick">
@@ -30,6 +33,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="2" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" Margin="0 15 0 0" Click="Back_Click"/>
+        <Button Grid.Row="2" Content="Выйти" Width="100" HorizontalAlignment="Right" Margin="0 15 0 0" Click="Back_Click"/>
     </Grid>
 </Window>

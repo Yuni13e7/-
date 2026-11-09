@@ -9,6 +9,7 @@ namespace WpfApp1.Statics
     public static class CurrentSession
     {
         public static users CurrentUser { get; set; }
+        
 
     }
 }

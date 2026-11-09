@@ -11,8 +11,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <TextBox x:Name="SearchBox" Grid.Row="0" Width="300" HorizontalAlignment="Left" Margin="0 0 0 15" TextChanged="SearchBox_TextChanged"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBox x:Name="SearchBox" Width="200" TextChanged="SearchBox_TextChanged" Margin=" 0 0 50 0"/>
+            <Button Content="Назад" Width="200" Height="30" x:Name="LogOutButton" Click="LogOutButton_Click"/>
+        </StackPanel>
 
         <ListBox x:Name="ProductsList" Grid.Row="1" MouseDoubleClick="ProductsList_MouseDoubleClick">
             <ListBox.ItemTemplate>
